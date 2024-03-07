@@ -1,17 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Root : MonoBehaviour
 {
     public bool breakable = true;
     public bool broken = false;
-    protected Animator anim;
-    public float speed = 1;
-    private float currentTime;
     public GameObject cutPrefab;
+    public Transform cutPrefabPoint;
+    public float speed = 1;
 
+    private float currentTime;
+    protected Animator anim;
     bool once = false;
+    
     void Start()
     {
         currentTime = Time.time;
@@ -31,7 +34,7 @@ public class Root : MonoBehaviour
         {
             if (broken && !once)
             {
-                Instantiate(cutPrefab, transform.GetChild(0).position, Quaternion.identity);
+                Instantiate(cutPrefab, cutPrefabPoint.position, Quaternion.identity);
                 StartCoroutine(animation());
                 once = true;
             }
@@ -41,6 +44,14 @@ public class Root : MonoBehaviour
     {
         yield return new WaitForSeconds(0.087f);
         anim.speed = 0;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            broken = true;
+            Debug.Log("Collided with " + collision.gameObject.name);
+        }
     }
 }
 

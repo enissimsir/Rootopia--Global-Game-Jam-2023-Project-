@@ -5,5 +5,5 @@ using UnityEngine;
 public static class Controller 
 {
     public static bool debug = true;
-    public static float timeTodivide = 6;
+    public static float timeTodivide = 3;
 }

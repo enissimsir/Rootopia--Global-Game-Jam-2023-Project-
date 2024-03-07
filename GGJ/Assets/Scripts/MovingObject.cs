@@ -20,8 +20,17 @@ public class MovingObject : MonoBehaviour
             {
                 currentWaypointIndex = 0;
             }
+            switch(currentWaypointIndex)
+            {
+                case 0:
+                    transform.rotation = Quaternion.Euler(0, 0, 0);
+                    break;
+                case 1:
+                    transform.rotation = Quaternion.Euler(0, 180, 0);
+                    break;
+            }
         }
 
-        transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, movementSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, movementSpeed * Time.deltaTime);
     }
 }

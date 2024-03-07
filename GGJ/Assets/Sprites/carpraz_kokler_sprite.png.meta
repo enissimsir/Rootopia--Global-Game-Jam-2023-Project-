@@ -466,8 +466,6 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      carpraz_kokler_sprite_13: -130136982
-      carpraz_kokler_sprite_0: -1935381203
       carpraz_kokler_sprite_11: -1130329609
       carpraz_kokler_sprite_2: -887989508
       carpraz_kokler_sprite_4: 826663647
@@ -479,7 +477,7 @@ TextureImporter:
       carpraz_kokler_sprite_9: 561227397
       carpraz_kokler_sprite_6: -51897397
       carpraz_kokler_sprite_7: 1689176695
-      carpraz_kokler_sprite_12: 1898248963
+      carpraz_kokler_sprite_13: -130136982
       carpraz_kokler_sprite_3: -84486159
   spritePackingTag: 
   pSDRemoveMatte: 0

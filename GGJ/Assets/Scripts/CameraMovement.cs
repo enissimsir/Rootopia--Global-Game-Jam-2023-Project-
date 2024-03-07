@@ -13,10 +13,11 @@ public class CameraMovement : MonoBehaviour
     private bool isFirstTime = true;
     private bool startTheGame = false;
     private bool goOn = false;
-    private int currentLevel;
+    public static int currentLevel;
 
     private void Start()
     {
+        GameState.levelStarted = true; // DO NOT FORGET TO REMOVE
         StartCoroutine(justWait(3));
         currentLevel = SceneManager.GetActiveScene().buildIndex - 1;
         if (currentLevel == 2)

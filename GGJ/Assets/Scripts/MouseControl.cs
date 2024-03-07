@@ -5,22 +5,16 @@ using UnityEngine;
 
 public class MouseControl : MonoBehaviour
 {
-    Vector2 direction;
-    Vector3 currentMousePos;
-
     private LineRenderer lineRenderer;
     private bool pressed = false;
-    EdgeCollider2D edgeCollider;
     Vector2 mousePosDown;
     Vector2 mousePosUp;
 
     void Start()
     {
-        edgeCollider = GetComponent<EdgeCollider2D>();
         lineRenderer = GetComponent<LineRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -28,32 +22,44 @@ public class MouseControl : MonoBehaviour
             mousePosDown = Input.mousePosition;
 
             mousePosDown = Camera.main.ScreenToWorldPoint(mousePosDown);
-            
-            lineRenderer.SetPosition(0, mousePosDown);
+
+            lineRenderer.SetPosition(0, new Vector3(mousePosDown.x, mousePosDown.y, 8.0f));
             pressed = true;
         }
-        if (Input.GetMouseButtonUp(0)){
+        if (Input.GetMouseButtonUp(0))
+        {
             pressed = false;
-            lineRenderer.SetPosition(0, new Vector2(0, 0));
-            lineRenderer.SetPosition(1, new Vector2(0, 0));
+            lineRenderer.SetPosition(0, new Vector3(0, 0, 8.0f));
+            lineRenderer.SetPosition(1, new Vector3(0, 0, 8.0f));
         }
         if (pressed)
         {
             mousePosUp = Input.mousePosition;
 
             mousePosUp = Camera.main.ScreenToWorldPoint(mousePosUp);
-            lineRenderer.SetPosition(1, mousePosUp);
+            lineRenderer.SetPosition(1, new Vector3(mousePosUp.x, mousePosUp.y, 8.0f));
 
             Ray ray = new Ray(mousePosDown, (mousePosUp - mousePosDown));
-            RaycastHit2D hitData = Physics2D.Raycast(mousePosDown, (mousePosUp - mousePosDown), (mousePosUp - mousePosDown).magnitude);
-            //Physics.Raycast(ray, out hitData, (mousePosUp - mousePosDown).magnitude);
+            RaycastHit2D[] hitDatas = Physics2D.RaycastAll(mousePosDown, (mousePosUp - mousePosDown), (mousePosUp - mousePosDown).magnitude);
 
-            if (hitData && hitData.transform.tag == "Root")
+            foreach (var hitData in hitDatas)
             {
-                Root root = hitData.transform.GetComponent<Root>();
-                root.broken = true;
-                //Debug.Log(hitData.transform.gameObject.name);
-                
+                if (hitData && hitData.transform.tag == "Root")
+                {
+                    Root root = hitData.transform.GetComponent<Root>();
+                    if (root != null)
+                    {
+                        root.broken = true;
+                    }
+                    else
+                    {
+                        root = hitData.transform.parent.GetComponent<Root>();
+                        root.broken = true;
+                    }
+
+                    Debug.Log(hitData.transform.gameObject.name);
+
+                }
             }
         }
     }

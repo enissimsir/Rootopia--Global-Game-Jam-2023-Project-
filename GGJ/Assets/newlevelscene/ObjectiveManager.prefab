@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4932978158533061034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4932978158533061032}
+  - component: {fileID: 4932978158533061035}
+  m_Layer: 0
+  m_Name: ObjectiveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4932978158533061032
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4932978158533061034}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 458.0697, y: 193.04512, z: 8.015585}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4932978158533061035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4932978158533061034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21224d4d4ce28d04a8e0ce0c21e62915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icyYildiz: {fileID: 4560995965789637505, guid: 621e99d1aef72144c8312fb6ef990452, type: 3}
+  icyYildizComplete: {fileID: 9171963311464437066, guid: 958786c06d98cd943871c32720e62ae6, type: 3}
+  blueDiaObjective: {fileID: 1563294832989395127, guid: 84196078d08d4384bbf70700e6283690, type: 3}
+  blueDiaObjectiveComplete: {fileID: 5060134133266556643, guid: deb7aea713324fb4ea8272b1d491a4af, type: 3}
+  blueBubbleObjective: {fileID: 6030133741253543197, guid: a6460b29c12cdc14097d148d12cffa97, type: 3}
+  blueBubbleObjectiveComplete: {fileID: 2805638483178161432, guid: 07b18c34a76282a4ca36f77edbb5511f, type: 3}
+  lavaYildiz: {fileID: 3038446976622207955, guid: 720c3afb45858cd46a14698ac22f730f, type: 3}
+  lavaYildizComplete: {fileID: 5581440539961521647, guid: dbdcb6dd944ba8c41ac6250e1a59594a, type: 3}
+  redKuvarsObjective: {fileID: 2909811622854646163, guid: 9461e9300f0d5f840a1b5e0e269a94a2, type: 3}
+  redKuvarsObjectiveComplete: {fileID: 1414158987845219825, guid: 1205dd5da59573044bbcf6fca1616a8e, type: 3}
+  redStickObjective: {fileID: 4314910997484082243, guid: e3ed6c8e531ecfa4d85bec19accf260c, type: 3}
+  redStickObjectiveComplete: {fileID: 2675163867159164508, guid: 5e6cf75a2e3dc75469bfcd89c78c5b7d, type: 3}
+  slimeYildiz: {fileID: 3986475446932991494, guid: 756b055987e497442a5335a3b3180496, type: 3}
+  slimeYildizComplete: {fileID: 6496976976254273249, guid: de9936096fb4cc7498665eb37e81d87c, type: 3}
+  greenKuvarsObjective: {fileID: 1572839155358275058, guid: b415443102c70bc4b94f2cd34a1ec775, type: 3}
+  greenKuvarsObjectiveComplete: {fileID: 8330595682344645098, guid: a2518b1cabcd9114bbac663cbe59332c, type: 3}
+  orangeKuvarsObjective: {fileID: 6407401053994384118, guid: ef276bc25f719854dab5bb4bb9f6bb67, type: 3}
+  orangeKuvarsObejctiveComplete: {fileID: 5110159375811297940, guid: b82ecc490e187734eaf7c369df950a1d, type: 3}

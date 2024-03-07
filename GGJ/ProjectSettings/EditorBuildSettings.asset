@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/bolum3.unity
     guid: aaabbdce5ed5dad458a4084816cce438
+  - enabled: 1
+    path: Assets/Scenes/death.unity
+    guid: d8857a1fc7c1cf94f9795079f685b144
   m_configObjects: {}

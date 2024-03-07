@@ -7,6 +7,11 @@ TagManager:
   - Root
   - border
   - mineral
+  - BlueBubble
+  - BlueDia
+  - Egg1
+  - Egg2
+  - Egg3
   layers:
   - Default
   - TransparentFX
